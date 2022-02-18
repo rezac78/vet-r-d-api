@@ -35,6 +35,7 @@ router.post("/", async (req, res) => {
       radio: req.body.radio,
       information: req.body.information,
     });
+    await user.save();
     return res.status(200).json({ success: "true" });
   } catch (err) {
     console.log(err);
