@@ -5,15 +5,14 @@ const User = require("../models/ver");
 const router = new Router();
 
 router.get("/", (req, res) => {
-  res.send("hello modet fuker");
-  // try {
-  //   User.find().then((result) => {
-  //     res.status(200).json({ User: result });
-  //   });
-  // } catch (err) {
-  //   console.log(err);
-  //   return res.status(400).json({ error: "error" });
-  // }
+  try {
+    User.find().then((result) => {
+      res.status(200).json({ User: result });
+    });
+  } catch (err) {
+    console.log(err);
+    return res.status(400).json({ error: "error" });
+  }
 });
 
 router.get("/:id", (req, res) => {
