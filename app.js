@@ -27,6 +27,7 @@ app.use(express.json());
 //* Routes
 app.use("/api",indexRoutes);
 
+//* Select a port
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () =>
